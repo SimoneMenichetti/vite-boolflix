@@ -6,6 +6,9 @@ import AppHeader from './components/AppHeader.vue';
 // importiamo il componente AppMovieDetailslist
 import AppMovieDetailslist from './components/AppMovieDetailsList.vue';
 
+// importiamo lo store 
+
+import {store} from './store';
 
 export default {
   name: "App",
@@ -13,6 +16,12 @@ export default {
     AppHeader,
     AppMovieDetailslist,
 
+  },
+
+  data(){
+    return{
+      store,
+    }
   }
 }
 </script>
