@@ -2,6 +2,11 @@
 export default {
     name: "AppHeader",
     props:["title"],
+    data() {
+        return {
+        searchQuery: ''
+        };
+    },
 
 }
 </script>

@@ -18,4 +18,6 @@ export default{
 
 <style scoped lang="scss">
 @use '../assets/style/general.scss'as*;
+
+
 </style>

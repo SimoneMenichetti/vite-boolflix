@@ -22,7 +22,28 @@ export default {
     return{
       store,
     }
+  },
+
+  // inizializiamo un metodo per richiamare dall api
+  methods:{
+    getMovieDetails(){
+      axios.
+      get(store.apiURL)
+      .then(result=>{
+        console.log(result.data);
+        // inseriamo nell array vuoto gli object trovati 
+        store.AppMovieDetailsList=result.data;
+      })
+      .catch(err =>{
+        console.log(err);
+
+      })
+    }
+  },
+  created(){
+    this.getMovieDetails();
   }
+
 }
 </script>
 
