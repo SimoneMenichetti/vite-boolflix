@@ -34,7 +34,7 @@ export default{
             <p><strong>Rating:</strong></p>
             <p><strong>Trame:</strong></p>
         </div>
-        <!-- Aggiungi altre card come necessario -->
+       <!-- qui aggiunta card dei film / serie -->
     </div>
 </template>
 
