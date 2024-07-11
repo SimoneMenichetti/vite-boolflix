@@ -3,21 +3,24 @@
 import axios from 'axios';
 // importiamo il componente AppHeader
 import AppHeader from './components/AppHeader.vue';
+// importiamo il componente AppMovieDetailslist
+import AppMovieDetailslist from './components/AppMovieDetailsList.vue';
 
 
 export default {
   name: "App",
   components: {
     AppHeader,
+    AppMovieDetailslist,
 
   }
 }
 </script>
 
 <template>
-  <AppHeader />
+    <AppHeader title="BOOLFLIX" />
   <main>
-
+    <AppMovieDetailslist/>
   </main>
 
 </template>
