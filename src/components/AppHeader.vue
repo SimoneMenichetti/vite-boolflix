@@ -1,6 +1,6 @@
 <script>
 export default {
-    name: 'AppHeader',
+    name: "AppHeader",
 
 }
 </script>
@@ -8,5 +8,5 @@ export default {
 <template></template>
 
 <style lang="scss" scoped>
-@use'../assets/style/general.scss'
+@use'../assets/style/general.scss';
 </style>

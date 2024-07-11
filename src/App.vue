@@ -23,6 +23,8 @@ export default {
 </template>
 
 <style lang="scss">
+@use './assets/style/partials/general.scss' as*;
+
 main {
   padding-top: 20px;
 }
