@@ -58,7 +58,7 @@ export default {
     border: 1px solid #DE020C;
     border-radius: 4px;
     background-color:#fff;
-    color: white;
+    color:#464646;
     }
     .search-bar button {
     color: white;
