@@ -1,0 +1,3 @@
+// Themoviedb
+// Chiave Api: 2151d1163db8f79c65ffd8f6a53575be
+// Api Read access Token: eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyMTUxZDExNjNkYjhmNzljNjVmZmQ4ZjZhNTM1NzViZSIsIm5iZiI6MTcyMDY5MDgxNi4wMDUzMjIsInN1YiI6IjY2OGZhNzZlZDNkMDVmODhlNWE3MDZlMyIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.6gaD1NbzZbAm_9f-igMdTul78b3NrKIHKosL-SZGi7Q
