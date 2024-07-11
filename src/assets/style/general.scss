@@ -10,18 +10,17 @@
     flex-wrap: wrap;
     justify-content: center;
     gap: 16px;
-    padding: 0 16px;
 
 }
 
-/* Media query per schermi molto grandi (larghezza minima 1480px) */
+/* Media query per schermi molto grandi (larghezza minima 1280px) */
 @media (max-width: 1240px) {
     .movie-details {
         flex: 1 1 calc(25% - 16px);
     }
 }
 
-/* Media query per schermi medi (tablet) */
+/* Media query per schermi medi (tablet 768px) */
 @media (max-width: 768px) {
     .movie-details {
         flex: 1 1 calc(50% - 16px);
@@ -29,7 +28,7 @@
     }
 }
 
-/* Media query per schermi molto piccoli (smartphone) */
+/* Media query per schermi molto piccoli (smartphone 480px) */
 @media (max-width: 480px) {
     .movie-details {
         flex: 1 1 calc(100% - 16px);
