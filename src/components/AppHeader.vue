@@ -1,10 +1,13 @@
 <script>
+
+import {store} from '../store';
+
 export default {
     name: "AppHeader",
     props:["title"],
     data() {
         return {
-        searchQuery: ''
+            store,
         };
     },
 
@@ -19,9 +22,9 @@ export default {
         <!-- sezione input barra di ricerca e button -->
         <div class="search-bar">
             <!-- searchbar -->
-            <input type="text"v-model="searchQuery"placeholder="Search for a movie"/>
+            <input type="text"v-model="store.searchText"placeholder="Search for a movie"/>
             <!-- bottone di ricerca aggangiato event al click-->
-            <button @click="emitSearchEvent">
+            <button @click.prevent="$emit('search')">
                 Search
             </button>
         </div>

@@ -29,10 +29,10 @@ export default {
     getMovieDetails(){
       axios.
       get(store.apiURL)
-      .then(result=>{
-        console.log(result.data);
+      .then(res=>{
+        console.log(res.data.results);
         // inseriamo nell array vuoto gli object trovati 
-        store.AppMovieDetailsList=result.data;
+        store.appMovieDetailsList=res.data.results;
       })
       .catch(err =>{
         console.log(err);
@@ -48,7 +48,7 @@ export default {
 </script>
 
 <template>
-    <AppHeader title="BOOLFLIX" />
+    <AppHeader title="BOOLFLIX" @search="getMovieDetails"/>
   <main>
     <AppMovieDetailslist/>
   </main>
