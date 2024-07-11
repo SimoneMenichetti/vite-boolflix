@@ -1,6 +1,7 @@
 <script>
 export default {
     name: "AppHeader",
+    props:["title"],
 
 }
 </script>
@@ -8,7 +9,7 @@ export default {
 <template>
     <header class="header">
         <div class="logo">
-            <span>Boolflix</span>
+            <span>{{ title }}</span>
         </div>
         <!-- sezione input barra di ricerca e button -->
         <div class="search-bar">
@@ -23,7 +24,7 @@ export default {
 </template>
 
 <style lang="scss" scoped>
-@use'../assets/style/general.scss';
+@use'../assets/style/general.scss' as*;
 
 // regole sezione HEADER
 .header {
@@ -51,20 +52,20 @@ export default {
     margin-right: 10px;
     border: 1px solid #DE020C;
     border-radius: 4px;
-    background-color: #282c34;
+    background-color:#fff;
     color: white;
     }
     .search-bar button {
     color: white;
     padding: 5px 10px;
-    background-color: #464646;
+    background-color:  #DE020C;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     }
     .search-bar button:hover {
-    background-color: #DE020C;
-    color: #464646;
+    background-color:  #464646;
+    color: #fff;
     }
 }
 </style>
