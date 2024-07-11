@@ -1,4 +1,6 @@
 <script>
+// importiamo axios 
+import axios from 'axios';
 // importiamo il componente AppHeader
 import AppHeader from './components/AppHeader.vue';
 
