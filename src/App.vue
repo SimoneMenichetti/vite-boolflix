@@ -1,9 +1,27 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// importiamo il componente AppHeader
+import AppHeader from './components/AppHeader.vue';
+
+
+export default {
+  name: "App",
+  components: {
+    AppHeader,
+
+  }
+}
 </script>
 
 <template>
+  <AppHeader />
+  <main>
+
+  </main>
 
 </template>
 
-<style></style>
+<style lang="scss">
+main {
+  padding-top: 20px;
+}
+</style>
