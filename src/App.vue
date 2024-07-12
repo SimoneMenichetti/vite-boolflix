@@ -26,18 +26,18 @@ export default {
 
   // inizializiamo un metodo per richiamare dall api
   methods:{
-    getMovieDetails(){
-      axios.
-      get(store.apiURL)
-      .then(res=>{
-        console.log(res.data.results);
-        // inseriamo nell array vuoto gli object trovati 
-        store.appMovieDetailsList=res.data.results;
-      })
-      .catch(err =>{
-        console.log(err);
+    getMovieDetails() {
+      const searchQuery = store.searchText;
+      const url = `https://api.themoviedb.org/3/search/movie?api_key=2151d1163db8f79c65ffd8f6a53575be&query=${searchQuery}`;
 
-      })
+      axios.get(url)
+        .then(res => {
+          console.log(res.data.results);
+          store.appMovieDetailsList = res.data.results;
+        })
+        .catch(err => {
+          console.log(err);
+        });
     }
   },
   created(){
