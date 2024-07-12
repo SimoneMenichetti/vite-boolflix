@@ -24,13 +24,16 @@ export default {
     }
   },
 
-  // inizializiamo un metodo per richiamare dall api
-  methods:{
+  // inizializiamo un metodo per richiamare dall api la ricerca dei film
+  methods: {
+    getApiUrlFilms(searchQuery) {
+      const apiKey = '2151d1163db8f79c65ffd8f6a53575be';
+      return `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${searchQuery}`;
+    },
+
     getMovieDetails() {
       const searchQuery = store.searchText;
-      const urlFilms = `https://api.themoviedb.org/3/search/movie?api_key=2151d1163db8f79c65ffd8f6a53575be&query=${searchQuery}`;
-
-      axios.get(urlFilms)
+      axios.get(this.getApiUrlFilms(searchQuery))
         .then(res => {
           console.log(res.data.results);
           store.appMovieDetailsList = res.data.results;
@@ -40,10 +43,9 @@ export default {
         });
     }
   },
-  created(){
+  created() {
     this.getMovieDetails();
   }
-
 }
 </script>
 
