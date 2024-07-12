@@ -48,6 +48,10 @@
           }
         });
 
+        // Console log delle risposte ricevute
+        console.log('Risposta API Film:', moviesRes.data.results);
+        console.log('Risposta API Serie TV:', tvRes.data.results);
+
         // Mappa i risultati aggiungendo il tipo (movie o tv)
         const movies = moviesRes.data.results.map(movie => ({ ...movie, type: 'movie' }));
         const tvShows = tvRes.data.results.map(show => ({ ...show, type: 'tv' }));
