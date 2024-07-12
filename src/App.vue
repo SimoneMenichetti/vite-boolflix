@@ -28,9 +28,9 @@ export default {
   methods:{
     getMovieDetails() {
       const searchQuery = store.searchText;
-      const url = `https://api.themoviedb.org/3/search/movie?api_key=2151d1163db8f79c65ffd8f6a53575be&query=${searchQuery}`;
+      const urlFilms = `https://api.themoviedb.org/3/search/movie?api_key=2151d1163db8f79c65ffd8f6a53575be&query=${searchQuery}`;
 
-      axios.get(url)
+      axios.get(urlFilms)
         .then(res => {
           console.log(res.data.results);
           store.appMovieDetailsList = res.data.results;
