@@ -3,22 +3,22 @@
 export default{
     name:"SingleMovieDetail",
     props:['info'],
+    
     // utilizzo proprieta computed per trasformare la stringa delle flag in img
     computed: {
-    flagUrl() {
-      const languageCode = this.info.original_language;
-      return `https://flagcdn.com/16x12/${languageCode}.png`;
-    }
-  },
+        flagUrl() {
+        const languageCode = this.info.original_language;
+        return `https://flagcdn.com/16x12/${languageCode}.png`;
+        }
+    },
 // metodo  caso di fallback utilizzare un path src alternativo univoco
-  methods: {
-    handleError(event) {
-      console.log('Error loading flag for:', this.info.original_language);  
-     
-      event.target.src = "https://flagcdn.com/16x12/gb-eng.png"; 
-    }
-  }
-  
+    methods: {
+        handleError(event) {
+        console.log('Error loading flag for:', this.info.original_language);  
+        
+        event.target.src = "https://flagcdn.com/16x12/gb-eng.png"; 
+        }
+    },
 }
 </script>
 

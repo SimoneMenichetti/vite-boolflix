@@ -9,19 +9,43 @@ export default{
     components:{
         SingleMovieDetail,
     },
-    data(){
-        return{
-        store,
-        }
-    }
+    data() {
+    return {
+      store,
+    };
+  },
+  computed: {
+    movies() {
+      return this.store.appMovieDetailsList.filter(item => item.type === 'movie');
+    },
+    tvShows() {
+      return this.store.appMovieDetailsList.filter(item => item.type === 'tv');
+    },
+  },
 
 }
 </script>
 
 <template>
-    <div class="container">
-        <div class="movie-details" v-for="movie in store.appMovieDetailsList" :key="movie.id">
-            <SingleMovieDetail :info="movie"/>
+   <div class="container">
+        <!-- Sezione Film -->
+        <div v-if="movies.length > 0">
+            <h2>Films</h2>
+            <div class="movie-container">
+                <div class="movie-details" v-for="movie in movies" :key="movie.id">
+                    <SingleMovieDetail :info="movie" />
+                </div>
+            </div>
+        </div>
+
+        <!-- Sezione Serie TV -->
+        <div v-if="tvShows.length > 0">
+            <h2>TV Series</h2>
+            <div class="tv-show-container">
+                <div class="movie-details" v-for="show in tvShows" :key="show.id">
+                    <SingleMovieDetail :info="show" />
+                </div>
+            </div>
         </div>
     </div>
 </template>
