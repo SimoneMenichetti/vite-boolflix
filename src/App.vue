@@ -5,10 +5,11 @@
     import AppHeader from './components/AppHeader.vue';
     // importiamo il componente AppMovieDetailslist
     import AppMovieDetailslist from './components/AppMovieDetailsList.vue';
-    
     // importiamo lo store 
-    
     import {store} from './store';
+    // import libreria e css flagicon
+    import '../node_modules/flag-icon-css/country.json';
+   
     
     export default {
       name: "App",
@@ -79,6 +80,7 @@
 
 <style lang="scss">
     @use './assets/style/general.scss' as*;
+    @import '../node_modules/flag-icon-css/css/flag-icons.css';
     
     main {
       padding-top: 20px;
