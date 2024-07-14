@@ -11,6 +11,18 @@ export default {
       
     }
   },
+
+  data() {
+    return {
+      isHovering: false
+    };
+  },
+  computed: {
+    flipCardTransform() {
+      return this.isHovering ? 'rotateY(180deg)' : 'rotateY(0deg)';
+    }
+  },
+  
   methods: {
     // metodo per mostrare dopo la chiamata i poster relativi alla ricerca
     getPosterUrl() {
@@ -20,8 +32,7 @@ export default {
         const posterSize = 'w200';
         return `${basePosterUrl}${posterSize}${posterPath}`;
       } else {
-        // Se non c'è un poster disponibile, restituisci un'immagine di default
-        return '/public/img/fotonondisponibile.jpg'; 
+        return '/public/img/fotonondisponibile.jpg'; // Immagine di default se non c'è il poster
       }
     },
     // metodo per mostrare dopo la chiamata le flag relative alla ricerca per le lingue
@@ -66,39 +77,97 @@ export default {
 </script>
 
 <template>
-  <div class="single-movie">
-    <!-- Caricamento condizionale dell'immagine della copertina -->
-    <img :src="getPosterUrl()" alt="poster" class="poster" />
-    <h3>{{ info.title }}</h3>
-    <p><strong>Titolo originale:</strong><br>{{ info.original_title }}</p>
-    <i :class="getFlagClass(info.original_language)" class="flag-icon"></i>
-    <div class="star-container">
-      <span v-for="star in getRatingStars()" :key="star" class="star">★</span>
+ <div class="single-movie" @mouseenter="isHovering = true" @mouseleave="isHovering = false">
+    <div class="flip-card">
+      <!-- Fronte del poster -->
+      <div class="flip-card-inner" :style="{ transform: flipCardTransform }">
+        <div class="flip-card-front">
+          <img :src="getPosterUrl()" alt="poster" class="poster" />
+        </div>
+        <!-- Retro del poster con i dettagli -->
+        <div class="flip-card-back">
+          <div class="back-content">
+            <h3>{{ info.title  || 'Non disponibile'}}</h3>
+            <p><strong>Titolo originale:</strong><br>{{ info.original_title || 'Non disponibile' }}</p>
+            <i :class="getFlagClass(info.original_language)" class="flag-icon"></i>
+            <div class="star-container">
+              <span v-for="star in getRatingStars()" :key="star" class="star">★</span>
+            </div>
+            <p><strong>Trama:</strong><br>{{ info.overview }}</p>
+          </div>
+        </div>
+      </div>
     </div>
-    <p><strong>Trama:</strong><br>{{ info.overview }}</p>
   </div>
 </template>
 
 <style scoped lang="scss">
 @use '../assets/style/general.scss' as*;
-    h3, p{
-        margin-bottom:5px ;
-    }
+.single-movie {
+  position: relative;
+  width: 200px;
+  height: 300px; 
+  perspective: 1000px;
+}
 
-    .poster {
-    width: 200px;
-    height: auto; 
-    margin-bottom: 10px;
-    background-color: black; 
-  }
-  // sezione star vote
+.flip-card {
+  width: 100%;
+  height: 100%;
+  position: relative; 
+  transform-style: preserve-3d;
+  transition: transform 0.5s;
+}
 
-  .star {
-    color: gold; 
-    font-size: 16px; 
-  }
+.flip-card-inner {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+}
 
-  .star.filled {
-    color: gold;
-  }
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  /* Fronte del poster */
+}
+
+.flip-card-back {
+  /* Retro del poster con i dettagli */
+  transform: rotateY(180deg);
+  background-color: #f9f9f9;
+  padding: 16px;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: auto;
+}
+
+.poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.star {
+  color: gold;
+  font-size: 16px;
+}
+
+.back-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%; 
+}
 </style>

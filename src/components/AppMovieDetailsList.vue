@@ -53,10 +53,13 @@ export default{
 <style scoped lang="scss">
 @use '../assets/style/general.scss'as*;
 .movie-details {
+    display: flex;
+    justify-content: center;
     box-sizing: border-box;
     padding: 16px;
     border: 1px solid #ccc;
     text-align: center;
+    font-size: 10px;
     background-color: #f9f9f9;
     
 
