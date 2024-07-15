@@ -10,6 +10,18 @@ export default {
             store,
         };
     },
+    methods: {
+    // Metodo per gestire la ricerca sia con il pulsante che con "Invio"
+    handleSearch() {
+      this.$emit('search'); // Emetti l'evento 'search' verso il componente genitore
+    },
+    // Metodo per gestire la pressione del tasto "Invio" nella tastiera
+    handleKeyPress(event) {
+      if (event.key === 'Enter') {
+        this.handleSearch(); // Richiama il metodo di ricerca quando viene premuto "Enter"
+      }
+    },
+  },
 
 }
 </script>
@@ -22,7 +34,7 @@ export default {
         <!-- sezione input barra di ricerca e button -->
         <div class="search-bar">
             <!-- searchbar -->
-            <input type="text"v-model="store.searchText"placeholder="Search for a movie"/>
+            <input type="text"v-model="store.searchText"placeholder="Search for a movie" @keypress.enter="handleKeyPress"/>
             <!-- bottone di ricerca aggangiato event al click-->
             <button @click.prevent="$emit('search')">
                 Search

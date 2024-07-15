@@ -9,6 +9,7 @@
     import {store} from './store';
     // import libreria e css flagicon
     import '../node_modules/flag-icon-css/country.json';
+    
    
     
     export default {
@@ -79,8 +80,8 @@
 </template>
 
 <style lang="scss">
-    @use './assets/style/general.scss' as*;
-    @import '../node_modules/flag-icon-css/css/flag-icons.css';
+  @use './assets/style/general.scss' as*;
+  @import '../node_modules/flag-icon-css/css/flag-icons.css';
     
   
 </style>

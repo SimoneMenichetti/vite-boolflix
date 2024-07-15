@@ -1,9 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
     box-sizing: border-box;
     padding: 0;
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+
+}
 
 
+h2 {
+    color: #fff;
 }
 
 // generali container
@@ -13,7 +20,7 @@
     justify-content: center;
     gap: 16px;
     padding: 0 16px;
-    background-color: #434343;
+    background-color: #151515;
     padding-top: 20px;
 }
 
@@ -24,6 +31,8 @@
     justify-content: flex-start;
     gap: 16px;
 }
+
+
 
 
 /* Media query per schermi  grandi (larghezza minima 1280px) */
