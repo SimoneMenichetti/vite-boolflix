@@ -87,9 +87,9 @@ export default {
         <!-- Retro del poster con i dettagli -->
         <div class="flip-card-back">
           <div class="back-content">
-            <h3>{{ info.title  || 'Non disponibile'}}</h3>
+            <h3><strong>Titolo:</strong><br>{{ info.title  || 'Non disponibile'}}</h3>
             <p><strong>Titolo originale:</strong><br>{{ info.original_title || 'Non disponibile' }}</p>
-            <i :class="getFlagClass(info.original_language)" class="flag-icon"></i>
+            <i :class="getFlagClass(info.original_language)"  class="flag-icon"></i>
             <div class="star-container">
               <span v-for="star in getRatingStars()" :key="star" class="star">★</span>
             </div>
@@ -102,11 +102,12 @@ export default {
 </template>
 
 <style scoped lang="scss">
-@use '../assets/style/general.scss' as*;
+@use '../assets/style/general.scss' as *;
+
 .single-movie {
   position: relative;
-  width: 200px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
   perspective: 1000px;
 }
 
@@ -155,7 +156,8 @@ export default {
 
 .poster {
   width: 100%;
-  object-fit: cover; 
+  height: 100%;
+  object-fit: cover;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -167,10 +169,30 @@ export default {
 .back-content {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start; /* Ensures content starts from the top */
+  justify-content: flex-start;
   align-items: center;
   height: 100%; 
   overflow-y: auto;
-  padding: 10px; /* Adds padding to avoid cutting off text */
+  padding: 10px;
+  text-align: center;
+}
+
+.back-content h3,
+.back-content p,
+.back-content i,
+.back-content .star-container {
+  margin: 10px 0; /* Aggiunge spazio verticale tra gli elementi */
+}
+
+
+
+/* Style for strong elements */
+.flip-card-back strong {
+  color: #DE020C;
+}
+
+/* Increase the size of flag icons */
+.flag-icon {
+  font-size: 24px; /* Adjust the size as needed */
 }
 </style>

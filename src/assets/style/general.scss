@@ -14,7 +14,7 @@
     gap: 16px;
     padding: 0 16px;
     background-color: #434343;
-
+    padding-top: 20px;
 }
 
 .movie-container,
@@ -52,4 +52,24 @@
     .movie-details {
         flex: 1 1 calc(100% - 16px);
     }
+}
+
+/* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
+.flip-card-back::-webkit-scrollbar {
+    width: 8px;
+}
+
+.flip-card-back::-webkit-scrollbar-thumb {
+    background-color: #464646;
+    border-radius: 4px;
+}
+
+.flip-card-back::-webkit-scrollbar-track {
+    background-color: #464646;
+}
+
+/* Custom scrollbar styles for Firefox */
+.flip-card-back {
+    scrollbar-color: #464646 black;
+    scrollbar-width: thin;
 }
