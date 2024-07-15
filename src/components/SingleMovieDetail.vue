@@ -60,11 +60,11 @@ export default {
       if (rating >= 8 && rating <= 10) {
         return 5; // Da 8 a 10 stelle
       } else if (rating >= 6 && rating < 8) {
-        return 4; // Da 6 a 7.9 stelle
+        return 4; // Da 6 a 8 stelle
       } else if (rating >= 3 && rating < 6) {
-        return 3; // Da 3 a 5.9 stelle
+        return 3; // Da 3 a 6 stelle
       } else if (rating >= 1 && rating < 3) {
-        return 2; // Da 1 a 2.9 stelle
+        return 2; // Da 1 a 3 stelle
       } else {
         return 0; // Nessuna stella se il punteggio è fuori dai range desiderati
       }
@@ -161,10 +161,14 @@ export default {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+// sezione star
+
 .star {
   color: gold;
   font-size: 16px;
 }
+
+// sezione text content
 
 .back-content {
   display: flex;
@@ -181,18 +185,15 @@ export default {
 .back-content p,
 .back-content i,
 .back-content .star-container {
-  margin: 10px 0; /* Aggiunge spazio verticale tra gli elementi */
+  margin: 10px 0; 
 }
 
-
-
-/* Style for strong elements */
 .flip-card-back strong {
   color: #DE020C;
 }
+// sezione flag
 
-/* Increase the size of flag icons */
 .flag-icon {
-  font-size: 24px; /* Adjust the size as needed */
+  font-size: 24px; 
 }
 </style>
