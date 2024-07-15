@@ -1,5 +1,5 @@
 <script>
-
+// import store
 import {store} from '../store';
 
 export default {
@@ -22,10 +22,8 @@ export default {
       }
     },
   },
-
 }
 </script>
-
 <template>
     <header class="header">
         <div class="logo">
@@ -56,44 +54,44 @@ export default {
   color:#DE020C;
     // REGOLE LOGO/TEXT
     .logo {
-    display: flex;
-    align-items: center;
+        display: flex;
+        align-items: center;
         span{
             font-size: 24px;
         }
     }
     // SEZIONE INPUT SEARCHBAR & BUTTON
     .search-bar {
-    display: flex;
-    align-items: center;
+        display: flex;
+        align-items: center;
     }
     .search-bar input {
-    padding: 5px;
-    margin-right: 10px;
-    border: 1px solid #DE020C;
-    border-radius: 4px;
-    background-color:#fff;
-    color:#464646;
+        padding: 5px;
+        margin-right: 10px;
+        border: 1px solid #DE020C;
+        border-radius: 4px;
+        background-color:#fff;
+        color:#464646;
     }
     .search-bar button {
-    color: white;
-    padding: 5px 10px;
-    background-color:  #DE020C;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
+        color: white;
+        padding: 5px 10px;
+        background-color:  #DE020C;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
     .search-bar button:hover {
-    background-color:  #464646;
-    color: #fff;
+        background-color:  #464646;
+        color: #fff;
     }
 
     h1 {
-    color: #E50914; 
-    text-align: center;
-    position: relative;
-     /* Animazione di tipo onda */
-    animation: wave 2s infinite linear;
+        color: #E50914; 
+        text-align: center;
+        position: relative;
+        /* Animazione di tipo onda */
+        animation: wave 2s infinite linear;
   }
 
   /* Chiave dell'animazione per creare l'effetto onda */

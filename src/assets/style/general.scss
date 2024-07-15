@@ -6,6 +6,7 @@
     margin: 0;
     font-family: 'Roboto', sans-serif;
 
+
 }
 
 
@@ -24,6 +25,8 @@ h2 {
     padding-top: 20px;
 }
 
+// sezione container generali movie e serie tv
+
 .movie-container,
 .tv-show-container {
     display: flex;
@@ -33,7 +36,7 @@ h2 {
 }
 
 
-
+// SEZIONE RESPONSIVE
 
 /* Media query per schermi  grandi (larghezza minima 1280px) */
 @media (min-width: 1240px) {
@@ -62,6 +65,8 @@ h2 {
         flex: 1 1 calc(100% - 16px);
     }
 }
+
+// STYLE CUSTOM DELLA SCROLLBAR
 
 /* Custom scrollbar styles for WebKit browsers (Chrome, Safari) */
 .flip-card-back::-webkit-scrollbar {

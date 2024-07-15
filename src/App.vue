@@ -75,10 +75,9 @@
     <main>
         <AppMovieDetailslist/>
     </main>
-
 </template>
 
 <style lang="scss">
-    @use './assets/style/general.scss' as*;
-    @import '../node_modules/flag-icon-css/css/flag-icons.css';
+  @use './assets/style/general.scss' as*;
+  @import '../node_modules/flag-icon-css/css/flag-icons.css';
 </style>

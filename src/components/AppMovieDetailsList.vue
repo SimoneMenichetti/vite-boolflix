@@ -1,7 +1,7 @@
 <script>
 // importiamo il componente SingleMovie
 import SingleMovieDetail from './SingleMovieDetail.vue';
-
+// import store
 import {store} from '../store';
 
 export default{
@@ -25,7 +25,6 @@ export default{
 
 }
 </script>
-
 <template>
    <div class="container">
         <!-- Sezione Film -->
@@ -66,11 +65,10 @@ export default{
   align-items: center;
   text-align: center;
   font-size: 14px;
-  background-color: black;
+  background-color:#151515;
   width: 200px;
   height: 400px;
     
-
     .movie-details h3 {
         margin-top: 0;
     }

@@ -1,7 +1,5 @@
 <script>
 
-
-
 export default {
   name: "SingleMovieDetail",
   props: {
@@ -72,10 +70,7 @@ export default {
   },
 }
 
-
-
 </script>
-
 <template>
  <div class="single-movie" @mouseenter="isHovering = true" @mouseleave="isHovering = false">
     <div class="flip-card">
@@ -125,6 +120,7 @@ export default {
   text-align: center;
   transition: transform 0.5s;
   transform-style: preserve-3d;
+  
 }
 
 .flip-card-front, .flip-card-back {
@@ -135,6 +131,7 @@ export default {
   justify-content: center;
   align-items: center;
   backface-visibility: hidden;
+  background-color: black;
 }
 
 .flip-card-front {
