@@ -13,12 +13,12 @@ export default {
     methods: {
     // Metodo per gestire la ricerca sia con il pulsante che con "Invio"
     handleSearch() {
-      this.$emit('search'); // Emetti l'evento 'search' verso il componente genitore
+      this.$emit('search'); 
     },
     // Metodo per gestire la pressione del tasto "Invio" nella tastiera
     handleKeyPress(event) {
       if (event.key === 'Enter') {
-        this.handleSearch(); // Richiama il metodo di ricerca quando viene premuto "Enter"
+        this.handleSearch(); 
       }
     },
   },
@@ -29,12 +29,12 @@ export default {
 <template>
     <header class="header">
         <div class="logo">
-            <span>{{ title }}</span>
+            <h1>{{ title }}</h1>
         </div>
         <!-- sezione input barra di ricerca e button -->
         <div class="search-bar">
             <!-- searchbar -->
-            <input type="text"v-model="store.searchText"placeholder="Search for a movie" @keypress.enter="handleKeyPress"/>
+            <input type="text"v-model="store.searchText"placeholder="Search for a movie" @keypress.enter.prevent="handleKeyPress"/>
             <!-- bottone di ricerca aggangiato event al click-->
             <button @click.prevent="$emit('search')">
                 Search
@@ -87,5 +87,26 @@ export default {
     background-color:  #464646;
     color: #fff;
     }
+
+    h1 {
+    color: #E50914; 
+    text-align: center;
+    position: relative;
+     /* Animazione di tipo onda */
+    animation: wave 2s infinite linear;
+  }
+
+  /* Chiave dell'animazione per creare l'effetto onda */
+  @keyframes wave {
+    0% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
 }
 </style>

@@ -93,7 +93,7 @@ export default {
             <div class="star-container">
               <span v-for="star in getRatingStars()" :key="star" class="star">★</span>
             </div>
-            <p><strong>Trama:</strong><br>{{ info.overview }}</p>
+            <p><strong>Trama:</strong><br>{{ info.overview || 'Non disponibile'}}</p>
           </div>
         </div>
       </div>
