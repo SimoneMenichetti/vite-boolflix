@@ -77,7 +77,7 @@ export default {
             <i :class="getFlagClass(info.original_language)"  class="flag-icon"></i>
             <div class="star-container">
               <span v-for="star in getRatingStars()" :key="star" class="star">★</span><br>
-              <span v-if="info.vote_average">{{ Math.floor(info.vote_average / 2) }}</span>
+              <!-- <span v-if="info.vote_average">{{ Math.floor(info.vote_average / 2 || 'Non disponibile') }}</span> -->
             </div>
             <p><strong>Trama:</strong><br>{{ info.overview || 'Non disponibile'}}</p>
             <p><strong>Generi:</strong><br>{{ info.genres || 'Non disponibile'}}</p>
