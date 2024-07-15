@@ -82,7 +82,5 @@
     @use './assets/style/general.scss' as*;
     @import '../node_modules/flag-icon-css/css/flag-icons.css';
     
-    main {
-      padding-top: 20px;
-    }
+  
 </style>

@@ -106,14 +106,14 @@ export default {
 .single-movie {
   position: relative;
   width: 200px;
-  height: 300px; 
+  height: 300px;
   perspective: 1000px;
 }
 
 .flip-card {
   width: 100%;
   height: 100%;
-  position: relative; 
+  position: relative;
   transform-style: preserve-3d;
   transition: transform 0.5s;
 }
@@ -142,19 +142,20 @@ export default {
 
 .flip-card-back {
   /* Retro del poster con i dettagli */
+  width: 100%;
+  height: 100%;
+  overflow-y: auto; 
+  overflow-x: hidden;
   transform: rotateY(180deg);
-  background-color: #f9f9f9;
+  color: #fff;
   padding: 16px;
   box-sizing: border-box;
   text-align: center;
-  overflow: auto;
 }
 
 .poster {
   width: 100%;
-  height: 100%;
   object-fit: cover; 
-  border: 1px solid #ccc;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -166,8 +167,10 @@ export default {
 .back-content {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start; /* Ensures content starts from the top */
   align-items: center;
   height: 100%; 
+  overflow-y: auto;
+  padding: 10px; /* Adds padding to avoid cutting off text */
 }
 </style>
