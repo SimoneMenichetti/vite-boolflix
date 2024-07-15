@@ -52,7 +52,7 @@ export default {
     },
     // metodo per trasformare le votazioni in img delle stelline per i voti 
     getRatingStars() {
-      const rating = Math.round(this.info.vote_average / 2); // Calcola il punteggio medio e arrotonda al numero intero più vicino
+      const rating = Math.max(Math.round(this.info.vote_average / 2), 1);// Calcola il punteggio medio e arrotonda al numero intero più vicino
 
       // Restituisci direttamente il punteggio arrotondato
       return rating;
