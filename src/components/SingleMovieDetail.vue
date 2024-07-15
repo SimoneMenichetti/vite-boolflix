@@ -52,21 +52,10 @@ export default {
     },
     // metodo per trasformare le votazioni in img delle stelline per i voti 
     getRatingStars() {
-      const rating = Math.ceil(this.info.vote_average);
-      
+      const rating = Math.round(this.info.vote_average / 2); // Calcola il punteggio medio e arrotonda al numero intero più vicino
 
-      // Logica per determinare il numero di stelle in base al punteggio
-      if (rating >= 8 && rating <= 10) {
-        return 5; // Da 8 a 10 stelle
-      } else if (rating >= 6 && rating < 8) {
-        return 4; // Da 6 a 8 stelle
-      } else if (rating >= 3 && rating < 6) {
-        return 3; // Da 3 a 6 stelle
-      } else if (rating >= 1 && rating < 3) {
-        return 2; // Da 1 a 3 stelle
-      } else {
-        return 0; // Nessuna stella se il punteggio è fuori dai range desiderati
-      }
+      // Restituisci direttamente il punteggio arrotondato
+      return rating;
     }
   },
 }
@@ -88,7 +77,7 @@ export default {
             <i :class="getFlagClass(info.original_language)"  class="flag-icon"></i>
             <div class="star-container">
               <span v-for="star in getRatingStars()" :key="star" class="star">★</span><br>
-              <span v-if="info.vote_average">{{ info.vote_average / 2 }}</span>
+              <span v-if="info.vote_average">{{ Math.floor(info.vote_average / 2) }}</span>
             </div>
             <p><strong>Trama:</strong><br>{{ info.overview || 'Non disponibile'}}</p>
             <p><strong>Generi:</strong><br>{{ info.genres || 'Non disponibile'}}</p>
