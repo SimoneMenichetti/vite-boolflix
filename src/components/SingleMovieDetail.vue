@@ -30,7 +30,7 @@ export default {
         const posterSize = 'w200';
         return `${basePosterUrl}${posterSize}${posterPath}`;
       } else {
-        return '/public/img/fotonondisponibile.jpg'; // Immagine di default se non c'è il poster
+        return "/public/img/immagine-non-disponibile-510x510.png"; // Immagine di default se non c'è il poster
       }
     },
     // metodo per mostrare dopo la chiamata le flag relative alla ricerca per le lingue
@@ -72,7 +72,7 @@ export default {
 
 </script>
 <template>
- <div class="single-movie" @mouseenter="isHovering = true" @mouseleave="isHovering = false">
+<div class="single-movie" @mouseenter="isHovering = true" @mouseleave="isHovering = false">
     <div class="flip-card">
       <!-- Fronte del poster -->
       <div class="flip-card-inner" :style="{ transform: flipCardTransform }">
@@ -89,6 +89,8 @@ export default {
               <span v-for="star in getRatingStars()" :key="star" class="star">★</span>
             </div>
             <p><strong>Trama:</strong><br>{{ info.overview || 'Non disponibile'}}</p>
+            <p><strong>Generi:</strong><br>{{ info.genres || 'Non disponibile'}}</p>
+            <p><strong>Cast:</strong><br>{{ info.cast.join(', ') || 'Non disponibile'}}</p>
           </div>
         </div>
       </div>
