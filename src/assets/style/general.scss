@@ -91,3 +91,15 @@ h2 {
     scrollbar-color: #464646 black;
     scrollbar-width: thin;
 }
+
+// regole gestione loading caricamento
+
+.loading-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-size: 24px;
+    color: #DE020C;
+    background-color: #151515;
+}

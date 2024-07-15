@@ -10,7 +10,6 @@
     // import libreria e css flagicon
     import '../node_modules/flag-icon-css/country.json';
    
-    
     export default {
       name: "App",
       components: {
@@ -28,6 +27,8 @@
           try {
             const searchQuery = this.store.searchText;
             const apiKey = '2151d1163db8f79c65ffd8f6a53575be';
+            // aggiungiamo lo stato di caricamento al momento dell inizializzazione ricerca
+            this.store.isLoading = true;
 
             // Effettua la chiamata per i film
             const moviesRes = await axios.get(`https://api.themoviedb.org/3/search/movie`, {
@@ -61,11 +62,13 @@
             this.store.appMovieDetailsList = [...movies, ...tvShows];
           } catch (error) {
             console.error('Error fetching data:', error);
+          } finally {
+            // inseriamo il momento della fine del caricamento
+            this.store.isLoading = false;
           }
         },
 
         // metodo aggiuntivo BONUS MILES 5 ( otteniamo i dettagli del cast e il genere film/serie)
-
         async getAdditionalDetails(id, type) {
           try {
             const apiKey = '2151d1163db8f79c65ffd8f6a53575be';
@@ -99,12 +102,23 @@
           }
         }
       },
+      created() {
+        this.getMovieDetails();
+      }
     }
 </script>
+
 <template>
     <AppHeader title="BOOLFLIX" @search="getMovieDetails" />
     <main>
+      <!-- utilizzo di una condizione ciclo v if per il caricamento con il relativo mex -->
+      <div v-if="store.isLoading" class="loading-indicator">
+        Caricamento...
+        Un Attimo e siamo ssshBoolflix da lei
+      </div>
+      <div v-else>
         <AppMovieDetailslist/>
+      </div>
     </main>
 </template>
 

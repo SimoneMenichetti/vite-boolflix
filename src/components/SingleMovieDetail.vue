@@ -53,6 +53,7 @@ export default {
     // metodo per trasformare le votazioni in img delle stelline per i voti 
     getRatingStars() {
       const rating = Math.ceil(this.info.vote_average);
+      
 
       // Logica per determinare il numero di stelle in base al punteggio
       if (rating >= 8 && rating <= 10) {
@@ -86,7 +87,8 @@ export default {
             <p><strong>Titolo originale:</strong><br>{{ info.original_title || 'Non disponibile' }}</p>
             <i :class="getFlagClass(info.original_language)"  class="flag-icon"></i>
             <div class="star-container">
-              <span v-for="star in getRatingStars()" :key="star" class="star">★</span>
+              <span v-for="star in getRatingStars()" :key="star" class="star">★</span><br>
+              <span v-if="info.vote_average">{{ info.vote_average / 2 }}</span>
             </div>
             <p><strong>Trama:</strong><br>{{ info.overview || 'Non disponibile'}}</p>
             <p><strong>Generi:</strong><br>{{ info.genres || 'Non disponibile'}}</p>

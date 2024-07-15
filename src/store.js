@@ -4,5 +4,7 @@ export const store = reactive({
     appMovieDetailsList: [],
     apiBase: 'https://api.themoviedb.org/3',
     searchText: "",
+    // prop per il loading alla ricerca
+    isLoading: false,
 });
 
